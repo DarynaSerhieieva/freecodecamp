@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function diffArray(arr1, arr2) {
+            let newArr = [];
+            const arrey = (array1, array2) => {
+                array1.forEach((element) => {
+                    if (!array2.includes(element)) {
+                        newArr.push(element);
+                    }
+                })
+            }
+            arrey(arr1,arr2);
+            arrey(arr2,arr1);
+            return newArr;
+        }
+
+        diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+    </script>
+</body>
+</html>
+
+includes
