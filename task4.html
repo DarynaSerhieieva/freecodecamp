@@ -7,6 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    <script></script>
+    <script>
+
+        function whatIsInAName(collection, source) {
+            let arr = [];
+
+            Object.keys(source).forEach((s, i) => {
+                if (i > 0) {
+                    arr = arr.filter(c => c[s] && c[s] === source[s]);
+
+                    return;
+                }
+                
+                arr = collection.filter(c => c[s] && c[s] === source[s]);
+            });
+
+            return arr;
+        }
+
+        whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3})
+        // whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })
+        // whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 });
+        // whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+    </script>
 </body>
 </html>
